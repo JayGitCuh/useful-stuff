@@ -245,7 +245,7 @@ function visual_module:draw_visual(main_table: table, gamename: string)
                                 esp['Highlight'].Chams.Enabled = newtable.Highlight.Enabled and newtable.ShowTeam
                                 esp['Highlight'].Chams.FillTransparency = newtable.Highlight.FillOpacity
                                 esp['Highlight'].Chams.OutlineTransparency = newtable.Highlight.OutlineOpacity
-                                esp['Highlight'].Chams.Parent = module:GetCharacter(visual_module.Player_Cache[index].Player, "badbusiness"):FindFirstChild("Body")
+                                esp['Highlight'].Chams.Parent = module:GetCharacter(visual_module.Player_Cache[index].Player, "badbusiness"):FindFirstChild("Hitbox")
                                 --Filledbox
                                 esp.Box["Filledbox"].Visible = newtable.Filledbox and newtable.Box and newtable.ShowTeam
                                 esp.Box["Filledbox"].Size = size
