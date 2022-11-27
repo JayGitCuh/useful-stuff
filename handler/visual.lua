@@ -454,6 +454,7 @@ function visual_module:draw_visual(main_table: table, gamename: string, playeram
                         toggledrawing(false)
                     end
                 end
+                wait(0.9)
             else
                 toggledrawing(false)
             end
