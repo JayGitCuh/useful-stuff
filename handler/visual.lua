@@ -10,7 +10,7 @@ local visual_module = {
     ["Player_Cache"] = {}, --player cache for esp no laggy
     ["Items"] = {},
 };
-function visual_module:draw_visual(main_table: table, gamename: string)
+function visual_module:draw_visual(main_table: table, gamename: string, playerammount: number)
     local function create_player(index)
         table.insert(visual_module.Player_Cache, index)
         local newtable = {};
@@ -470,8 +470,14 @@ function visual_module:draw_visual(main_table: table, gamename: string)
             end
         end)
     end
-    for i = 1, game.Players.MaxPlayers do
-        create_player(i) --creates new drawing group and caches it to be used again
+    if playerammount == nil then
+        for i = 1, game.Players.MaxPlayers do
+            create_player(i) --creates new drawing group and caches it to be used again
+        end
+    else
+        for i = 1, playerammount do
+            create_player(i) --creates new drawing group and caches it to be used again
+        end
     end
 end
 function visual_module:draw_humanoid(main_table: table, rootpart: Instance)
