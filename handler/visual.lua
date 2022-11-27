@@ -20,7 +20,6 @@ function visual_module:draw_visual(main_table: table, gamename: string, playeram
             Text = {Distance = Drawing.new("Text"), Name = Drawing.new("Text")},
             Highlight = {Chams = Instance.new("Highlight")},
         };
-
         esp.Highlight.Parent = nil
         for _index, v in pairs(esp.Box) do
             v.Visible = false
@@ -362,11 +361,6 @@ function visual_module:draw_visual(main_table: table, gamename: string, playeram
                         magnitude = (module:GetCharacter(visual_module.Player_Cache[index].Player, "trident").HumanoidRootPart.Position - dwCamera.CFrame.p).Magnitude
                         if newtable.Enabled and displayEsp and magnitude < newtable.ShowDistance then
                             if module:GetTeam(visual_module.Player_Cache[index].Player, "trident") then
-                                --Highlight
-                                esp['Highlight'].Chams.Enabled = newtable.Highlight.Enabled and newtable.ShowTeam
-                                esp['Highlight'].Chams.FillTransparency = newtable.Highlight.FillOpacity
-                                esp['Highlight'].Chams.OutlineTransparency = newtable.Highlight.OutlineOpacity
-                                esp['Highlight'].Chams.Parent = module:GetCharacter(visual_module.Player_Cache[index].Player, "trident")
                                 --Filledbox
                                 esp.Box["Filledbox"].Visible = newtable.Filledbox and newtable.Box and newtable.ShowTeam
                                 esp.Box["Filledbox"].Size = size
@@ -410,11 +404,6 @@ function visual_module:draw_visual(main_table: table, gamename: string, playeram
                                 esp.Line["SnapOutline"].To = esp.Line["Snapline"].To
                                 changedrawingcolor(newtable.TeamColor)
                             else
-                                --Highlight
-                                esp['Highlight'].Chams.Enabled = newtable.Highlight.Enabled
-                                esp['Highlight'].Chams.FillTransparency = newtable.Highlight.FillOpacity
-                                esp['Highlight'].Chams.OutlineTransparency = newtable.Highlight.OutlineOpacity
-                                esp['Highlight'].Chams.Parent = module:GetCharacter(visual_module.Player_Cache[index].Player, "trident")
                                 --Filledbox
                                 esp.Box["Filledbox"].Visible = newtable.Filledbox and newtable.Box
                                 esp.Box["Filledbox"].Size = size
