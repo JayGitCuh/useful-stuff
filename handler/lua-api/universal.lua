@@ -1,5 +1,4 @@
-local module = {
-};
+local module = {};
 local character
 function module:getCharacter(player: Instance)
     character = player.Character
