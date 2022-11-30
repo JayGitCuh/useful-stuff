@@ -5,15 +5,15 @@ local main = {
     ["visual"] = loadstring(game:HttpGet(github.."visual.lua"))(),
     ["lua-api"] = github.."lua-api/",
     ['supported'] = {
-        8130299583, --trident
+        [8130299583] = true, --trident
+        [3233893879] = true, --bad business
     };
 };
 function main:GetApi()
     if main.supported[game.PlaceId] then
-        loadstring(game:HttpGet(main["lua-api"]..game.PlaceId..".lua"))()
+        return loadstring(game:HttpGet(main["lua-api"]..game.PlaceId..".lua"))()
     else
-        loadstring(game:HttpGet(main["lua-api"].."universal.lua"))()
+        return loadstring(game:HttpGet(main["lua-api"].."universal.lua"))()
     end
 end
-print(main:GetApi())
---return main
+return main
