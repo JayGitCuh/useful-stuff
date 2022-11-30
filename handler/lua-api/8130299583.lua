@@ -1,5 +1,4 @@
 --trident
-
 local module = {};
 local charList = {}
 for i,v in ipairs(workspace:GetChildren()) do
