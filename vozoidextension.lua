@@ -108,6 +108,8 @@ local classes = {
         Color = {fromRGB(255, 255, 255), "Color3"},
         Size = {newUDim2(0, 100, 0, 100), "UDim2"},
         Position = {newUDim2(0, 0, 0, 0), "UDim2"},
+        OutlineColor = {fromRGB(0, 0, 0), "Color3"},
+        Outline = {false, "boolean"},
         Thickness = {1, "number"},
         Filled = {true, "boolean"}
     }
