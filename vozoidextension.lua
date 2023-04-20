@@ -142,6 +142,8 @@ local function mouse_over_higher_object(object)
         end
     end
 end
+Render.MouseOver = mouse_over
+Render.MouseOverObject = mouse_over_higher_object
 local function count_table(tbl)
     local count = 0
     for _, _ in next, tbl do
