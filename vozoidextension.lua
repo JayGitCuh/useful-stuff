@@ -64,10 +64,12 @@ local function round_position(position)
     return newVector2(math.floor(position.X), math.floor(position.Y));
 end
 local function queue_property_set(object, property, value)
-    if object.AbsoluteVisible then
-        setproperty(object._render, property, value)
-    else
-        object._queue[property] = value
+    if object ~= nil then
+        if object.AbsoluteVisible then
+            setproperty(object._render, property, value)
+        else
+            object._queue[property] = value
+        end
     end
 end
 local Render = {Fonts = Drawing.Fonts, ZIndex = 1000000}
