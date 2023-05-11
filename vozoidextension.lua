@@ -54,11 +54,13 @@ local newrender = is_synX and getupvalue(newDrawing, 1) or newDrawing
 local destroy = is_synX and getupvalue(line_mt.__index, 3) or function(drawing)
     drawing:Remove()
 end
-local setproperty = is_synX and getupvalue(line_mt.__newindex, 4) or setrenderproperty --[[function(object, property, value)-- or 
+local setproperty = is_synX and getupvalue(line_mt.__newindex, 4) --or setrenderproperty 
+--[[function(object, property, value)-- or 
     object[property] = value
 end
 ]]
-local getproperty = is_synX and getupvalue(line_mt.__index, 4) or getrenderproperty --[[ function(object, property) -- or 
+local getproperty = is_synX and getupvalue(line_mt.__index, 4) --or getrenderproperty 
+--[[ function(object, property) -- or 
     return object[property]
 end
 ]]
