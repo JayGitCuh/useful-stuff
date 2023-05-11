@@ -54,20 +54,12 @@ local newrender = is_synX and getupvalue(newDrawing, 1) or newDrawing
 local destroy = is_synX and getupvalue(line_mt.__index, 3) or function(drawing)
     drawing:Remove()
 end
-local setproperty = is_synX and getupvalue(line_mt.__newindex, 4) or function(object, property, value)
-    object[property] = value
-end
-local getproperty = is_synX and getupvalue(line_mt.__index, 4) or function(object, property)  
-    return object[property]
-end
---[[
 local setproperty = is_synX and getupvalue(line_mt.__newindex, 4) or setrenderproperty or function(object, property, value)
     object[property] = value
 end
 local getproperty = is_synX and getupvalue(line_mt.__index, 4) or getrenderproperty or function(object, property)  
     return object[property]
 end
-]]
 local function round_position(position)
     return newVector2(math.floor(position.X), math.floor(position.Y));
 end
