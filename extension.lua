@@ -1122,6 +1122,8 @@ local themes = {
     }
 }
 
+local library = {}
+
 local themeobjects = {}
 
 function utility.outline(obj, color)
@@ -1145,5 +1147,20 @@ function utility.outline(obj, color)
 end
 function utility.hextorgb(hex)
     return Color3.fromRGB(tonumber("0x" .. hex:sub(1, 2)), tonumber("0x" .. hex:sub(3, 4)), tonumber("0x"..hex:sub(5, 6)))
+end
+function utility.connect(signal, callback)
+    local connection = signal:Connect(callback)
+    table.insert(library.connections, connection)
+
+    return connection
+end
+
+function utility.disconnect(connection)
+    local index = table.find(library.connections, connection)
+    connection:Disconnect()
+
+    if index then
+        table.remove(library.connections, index)
+    end
 end
 return drawing, utility
