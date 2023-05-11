@@ -64,7 +64,7 @@ local function round_position(position)
     return newVector2(math.floor(position.X), math.floor(position.Y));
 end
 local function queue_property_set(object, property, value)
-    if object ~= nil then
+    if property ~= nil then
         if object.AbsoluteVisible then
             setproperty(object._render, property, value)
         else
